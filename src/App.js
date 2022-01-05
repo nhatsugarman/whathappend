@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import 'swiper/swiper.min.css'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import './assets/boxicons/css/boxicons.min.css'
+
+import './App.scss'
+import React from 'react'
+import Routes from './config/Routes'
+
+import { BrowserRouter, Route } from 'react-router-dom'
+
+import Header from './components/header/Header'
+import Footer from './components/footer/Footer'
+
+const App = () => {
+    return (
+        <BrowserRouter>
+            <Route render={props => (
+                <>
+                    <Header {...props} />
+                    <Routes />
+                    <Footer />
+                </>
+            )} />
+        </BrowserRouter>
+    )
 }
 
-export default App;
+export default App
