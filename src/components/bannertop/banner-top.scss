@@ -1,0 +1,50 @@
+@use '../../scss/' as *;
+
+.banner {
+    position: relative;
+    @include flex(center, flex-start);
+    &__content {
+        position: absolute;
+        color: $white; 
+        padding: 0 174px;
+        @include desktop {
+            padding: 0 100px;
+        }
+        @include tablet {
+            padding: 0 50px;
+        }
+        @include mobile {
+            padding: 0 10px;
+            display: none;
+        }
+        h3 {
+            font-size: 50px;
+            font-weight: 800;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.2;
+            letter-spacing: 5px;
+            @include tablet {
+                font-size: 30px;
+            }
+            @include mobile {
+                font-size: 20px;
+            }
+        }
+        p {
+            width: 43%;
+            margin-top: 4%;
+            font-size: 20px;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.75;
+            letter-spacing: normal;
+            text-align: left;
+            @include tablet {
+                font-size: 13px;
+                line-height: 1.5;
+            }
+        }
+    }
+}

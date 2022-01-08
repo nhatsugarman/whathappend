@@ -1,0 +1,99 @@
+@use '../../scss/' as *;
+
+.happen-isue {
+    background-color: #fccb05;
+    position: relative;
+    padding-bottom: 10%;
+
+    &__btn {
+        text-align: center;
+        margin-top: 3%;
+    }
+    &__dice1 {
+        position: absolute;
+        top: 17%;
+        right: 5%;
+        width: 6%;
+    }
+    &__dice2 {
+        position: absolute;
+        top: 5%;
+        right: 5%;
+        width: 5%;
+    }
+    &__content {
+        position: absolute;
+        bottom: 10%;
+        width: 100%;
+        display: flex;
+        @include tablet {
+            display: none
+        }
+        &__left {
+            @include flex(center, center);
+            position: relative;
+            flex-direction: column;
+            padding-top: 4%;
+            padding-bottom: 4%;
+            border: solid 3px $black-two;
+            background-color: $bright-orange-two;
+            width: 20%;
+            h2 {
+                width: 50%;
+                font-size: 55px;
+                font-weight: 800;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: 1.04;
+                letter-spacing: normal;
+                text-align: center;
+                color: $dark-brown;
+            }
+            &__arrow {
+                margin-top: 16%;
+                width: 33%;
+            }
+            &__icon {
+                position: absolute;
+                width: 45%;
+                right: 0;
+                bottom: 0;
+                transform: translateY(50%);
+            }
+        }
+        &__right {
+            width: 80%;
+            &__lists {
+                @include flex(center, center);
+                .happen-isue__content__right__item { 
+                    width: 25%;
+                    padding-bottom: 26%;
+                    background-color: $tomato-three;   
+                    border: solid 3px $black-two;       
+                     
+                    &:nth-child(1) {
+                        position: relative;
+                        .hot {
+                            position: absolute;
+                            width: 30%;
+                            transform: translateY(-50%);
+                        }
+                    }   
+                    &__tittle {
+                        text-align: center;
+                        font-size: 30px;
+                        font-weight: 800;
+                        font-stretch: normal;
+                        font-style: normal;
+                        line-height: 1.67;
+                        letter-spacing: normal;
+                        color: $white;
+                        text-transform: uppercase;
+                        padding: 3% 0px;
+                    }
+                }
+            }
+            
+        }
+    }
+}

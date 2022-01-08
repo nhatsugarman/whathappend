@@ -1,40 +1,138 @@
 @use "../../scss/" as *;
 
 .footer {
-    position: relative;
-    padding: 6rem 2rem;
-    background-position: top;
-    background-size: cover;
-    background-repeat: no-repeat;
-
+    padding: 100px;
+    @include desktop {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    @include tablet {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    @include mobile {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
     &__content {
-        max-width: 1000px;
-
-        &__logo {
+        margin-bottom: 83px;
+        @include flex(flex-start, space-between);
+        gap: 10px;
+        @include mobile {
+            flex-direction: column;
             @include flex(center, center);
-            margin-bottom: 3rem;
+        }
+        &__logo {
+            a {
+                font-size: 14px;
+                font-weight: bold;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: 2.14;
+                letter-spacing: normal;
+                color: $black-two;
+                margin-bottom: 31px;
+            }
+            .logo__description {
+                li {
+                    font-size: 14px;
+                    font-style: 20px;
+                    font-weight: 300;
+                    line-height: 2.14;
+                    text-align: left;
+                    color: $black-two;
+                }
+            }
         }
 
         &__menus {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-
-            @include mobile {
+            grid-template-columns: repeat(4, 1fr);
+            gap: 100px;
+            @include tablet {
                 grid-template-columns: repeat(2, 1fr);
+                gap: 50px;
             }
-        }
+            .footer__content__menu {
+                @include flex(flex-start, flex-start);
+                flex-direction: column;
+                h3 {
+                    font-size: 14px;
+                    font-weight: 600;
+                    font-stretch: normal;
+                    font-style: normal;
+                    line-height: 2.86;
+                    letter-spacing: normal;
+                    text-align: left;
+                    color: $black-two;
+                }
+                a {
+                    font-size: 14px;
+                    font-weight: 300;
+                    font-stretch: normal;
+                    font-style: normal;
+                    line-height: 2.21;
+                    letter-spacing: normal;
+                    text-align: left;
+                    color: $black-four;
 
-        &__menu {
-            @include flex(flex-start, flex-start);
+                }
+
+            }
+          
+        }
+    }
+    &__bottom {
+        @include flex(center, space-between);
+        @include mobile {
             flex-direction: column;
-            margin-top: 1rem;
+            @include flex(center, center);
+            gap: 10px;
+            text-align: center;
+        }
+        &__lists {
+            width: 100%;
+            max-width: 860px;
 
-            font-size: 1.5rem;
-            font-weight: 600;
-
-            & > * ~ * {
-                margin-top: 1rem;
+            .footer__bottom__item {
+                display: inline-block;
+                margin-right: 20px;
+                position: relative;
+                a {
+                    font-family: NotoSansCJKkr;
+                    font-size: 14px;
+                    font-weight: 300;
+                    font-stretch: normal;
+                    font-style: normal;
+                    line-height: 1.71;
+                    letter-spacing: normal;
+                    text-align: left;
+                    color: $greyish;
+                }
+                ::after {
+                    content: '';
+                    position: absolute;
+                    display: flex;
+                    width: 2px;
+                    height: 15px;
+                    background-color: $greyish;
+                    right: -10px;
+                    top: 20%;
+                    @include tablet {
+                        display: none;
+                    }
+                }
+               
             }
         }
+        &__links {
+            a {
+                display: flex;
+                img {
+                    margin-right: 24px;
+                }
+            }
+        }
+        
     }
 }

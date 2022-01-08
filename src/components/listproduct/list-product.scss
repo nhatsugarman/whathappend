@@ -1,0 +1,52 @@
+@use '../../scss/' as *;
+
+.list-products {
+    padding: 142px 9.1% 143px;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(299px,1fr));
+    column-gap: 18px;
+    row-gap: 72px;
+    @include mobile {
+        grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
+    }
+    .product-item {
+        h3 {
+            font-size: 18px;
+            font-weight: 600;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.94;
+            letter-spacing: normal;
+            text-align: left;
+            color: var(--black-three);
+            margin-top: 10.5%;
+        }
+        &__bottom {
+            font-size: 16px;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 2.19;
+            letter-spacing: normal;
+            text-align: left;
+            color: var(--black-three);
+            @include flex(center, space-between);
+            margin-top: 6%;
+            .product-item__bottom__heart {
+                i {
+                    color: $pumpkin-orange;
+                    margin-right: 7px;
+                    
+                }
+            }
+        }
+    }
+    .btns {
+        position: absolute;
+        bottom: 0;
+        text-align: center;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}

@@ -1,0 +1,116 @@
+@use '../../scss/' as *;
+
+.brand-story {
+    margin-top: 143px;
+    height: 100%;
+    width: 100%;
+    mix-blend-mode: multiply;
+    background-color: $cerulean;
+    overflow: hidden;
+
+    &__page {
+        position: absolute;
+        width: 9.5%;
+        left: 9%;
+        top: 8%;
+    }
+    &__books {
+        position: absolute;
+        width: 9.5%;
+        left: 0;
+        bottom: 6%;
+    }
+    &__book {
+        position: absolute;
+        width: 9.5%;
+        left: 9%;
+        bottom: 6%;
+    }
+    &__object4 {
+        position: absolute;
+        width: 16%;
+        right: -4%;
+        bottom: 20%;
+    }
+    &__object5 {
+        position: absolute;
+        width: 18%;
+        right: 0;
+        bottom: 6%;
+    }
+
+    .brand-story__content {
+        padding: 0 17.5%;
+        margin-top: 4%;
+        position: relative;
+        @include mobile {
+            display: none;
+        }
+
+        &__black {
+            height: 24px;
+            width: 100%;
+            background-color: $black-two;
+        }
+
+
+        &__main {
+            display: flex;
+            align-items: flex-start;
+            border: solid 3px $black-two;
+        
+
+            &__left {
+                width: 50%;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+                @include desktop {
+                    display: none;
+                }
+            }
+            &__right {
+                width: 50%;
+                height: 100%;
+                padding: 0 68px 0 45px;
+                background-color: $white;
+                @include desktop {
+                    width: 100%;
+                }
+                h3 {
+                    font-size: 25px;
+                    font-weight: 800;
+                    font-stretch: normal;
+                    font-style: normal;
+                    line-height: 2.4;
+                    letter-spacing: normal;
+                    text-align: left;
+                    color: $black-three;
+                    text-transform: uppercase;
+                    margin-top: 5%;
+                }
+                p {
+                    font-size: 16px;
+                    font-weight: 300;
+                    font-stretch: normal;
+                    font-style: normal;
+                    line-height: 1.88;
+                    letter-spacing: normal;
+                    text-align: left;
+                    color: $black-three;
+                    margin-top: 3%;
+                    @include desktop {
+                        display: none;
+                    }
+                }
+                .button {
+                    margin-top: 3%;
+                    margin-bottom: 10.5%;
+                }
+
+            }
+        }
+    }
+}

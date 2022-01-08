@@ -1,0 +1,57 @@
+@use '../../scss/' as *;
+.best__products__lists {
+    margin-top: 4.8%;
+    padding: 0 9.1%;
+    display: flex;
+    .best__products__item {
+        position: relative;
+        width: 33.333%;
+        display: inline-block;
+        &__img {
+            width: 100%;
+        }
+        &__number {
+            position: absolute;
+            width: 17.6%;
+            top: 0;
+            transform: translateY(-50%);
+        }
+
+        &__box {
+            width: 70.55%;
+            transform: translate(24%, -50%);
+            right: 0;
+            height: 79px;
+            position: relative;
+            @include flex(center, space-between);
+            border: solid 3px $dark-maroon;
+            background-color: $white;
+            padding: 7px 8px 6px 27px;
+            @include tablet {
+                display: none;
+            }
+            h4 {
+                font-size: 20px;
+                font-weight: 800;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: 1.25;
+                letter-spacing: normal;
+                text-align: left;
+                color: var(--black-three);
+                width: 60%;
+                @include desktop {
+                    width: 100%;
+                    font-size: 16px;
+                }
+                
+            }
+            img {
+                width: 17.7%;
+                right: 0;
+                top: 0;
+            }
+        }
+    }
+
+}

@@ -1,0 +1,81 @@
+@use '../../scss/' as *;
+
+.what-happen {
+    background-color: $white;
+    padding-bottom: 30%;
+    position: relative;
+    overflow: hidden;
+    &__btn {
+        text-align: center;
+        margin-top: 3%;
+    }
+
+    &__content {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        height: 100%;
+        &__video {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            &__girl {
+                width: 30%;
+                position: absolute;
+                bottom: 13%;
+                right: -7%;
+                z-index: 1;
+            } 
+            &__heart {
+                width: 7%;
+                position: absolute;
+                top: -24%;
+                left: 80%;
+                z-index: 1;
+            } 
+            &__iconw {
+                width: 7%;
+                position: absolute;
+                top: -32%;
+                left: 84%;
+            } 
+            &__main {
+                width: 65%;
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                z-index: 1;
+            } 
+            &__error {
+                width: 21%;
+                position: absolute;
+                bottom: 2%;
+                left: 20%;
+            } 
+            &__iconh {
+                width: 10%;
+                position: absolute;
+                bottom: 15%;
+                left: 12%;
+            } 
+            &__left {
+                width: 28%;
+                position: absolute;
+                top: -15%;
+                left: -14%;
+            } 
+            &__logoh {
+                width: 10%;
+                position: absolute;
+                top: -50%;
+                left: 14%;
+            } 
+            &__click {
+                width: 5%;
+                position: absolute;
+                bottom: 10%;
+                left: 60%;
+            }                           
+        }
+    }
+}

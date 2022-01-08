@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="65" height="66">
+    <path fill="#110E03" fill-rule="evenodd" d="M32.5.562C50.19.562 64.531 15.085 64.531 33c0 17.914-14.341 32.437-32.031 32.437C14.809 65.437.469 50.914.469 33 .469 15.085 14.809.562 32.5.562z"/>
+    <text x="17" y="42" fill="#FFF" font-family="Montserrat" font-size="20" font-weight="bold">
+        GO
+    </text>
+</svg>

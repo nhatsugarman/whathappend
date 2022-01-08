@@ -1,67 +1,72 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef } from 'react'
 
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 
-import logo from '../../assets/tmovie.png';
-
+import logo from '../../assets/img/logo.svg'
 import './header.scss'
-const headerNav = [
+
+const mainNav = [
     {
-        display: 'Home',
-        path: '/'
+        display: "Introduction",
+        path: "/"
     },
     {
-        display: 'Movies',
-        path: '/movie'
+        display: "Solution",
+        path: "/solution"
     },
     {
-        display: 'TV Series',
-        path: '/tv'
+        display: "Rate plan",
+        path: "/rate-plan"
     }
-];
+]
 
 const Header = () => {
 
-    const { pathname } = useLocation()
+    const menu = useRef(null)
 
-    const headerRef = useRef(null);
+    const menuToggle = () => menu.current.classList.toggle('active')
 
-    const active = headerNav.findIndex(e => e.path === pathname)
-
-    useEffect(() => {
-        const shrinkHeader = () => {
-            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-                headerRef.current.classList.add('shrink')
-            } else {
-                headerRef.current.classList.remove('shrink')
-            }
-        }
-        window.addEventListener('scroll', shrinkHeader)
-        return () => {
-            window.removeEventListener('scroll', shrinkHeader)
-        }
-    }, [])
 
     return (
-        <div ref={headerRef} className="header">
-            <div className="header__wrap container">
-                <div className="logo">
-                    <img src={logo} alt="" />
-                    <Link to="/">tMovies</Link>
+        <header className='header'>
+            <div className="header-container">
+                {/* Header left */}
+                <div className="header__logo">
+                    <Link to="/">
+                        <img src={logo} alt="" />
+                    </Link>
                 </div>
-                <ul className="header__nav">
-                    {
-                        headerNav.map((e, i) => (
-                            <li key={i} className={`${i === active ? 'active' : ''}`}>
-                                <Link to={e.path}>
-                                    {e.display}
-                                </Link>
-                            </li>
-                        ))
-                    }
-                </ul>
+
+                {/* Main header */}
+                <div className="header__menu">
+                    
+                    <ul className="header__menu-lists" ref={menu}>
+                        {
+                            mainNav.map((item, index) => (
+                                <li key={index} onClick={menuToggle}>
+                                    <Link to={item.path}>
+                                        {item.display}
+                                    </Link>
+                                </li>
+                            ))
+                        }
+                    </ul>
+
+                    <div className="header__menu-left" >
+                        <Link to="/" className='header__menu-left-login'>
+                            Log In
+                        </Link>
+                        <Link to="/" className='header__menu-left-login'>
+                            Apply for free use
+                        </Link>
+                    </div>
+
+                    <div className="header__menu__mobile-toggle" onClick={menuToggle}>
+                        <i className='bx bx-menu-alt-right'></i>
+                    </div>
+                </div>
             </div>
-        </div>
+        </header>
     )
 }
 

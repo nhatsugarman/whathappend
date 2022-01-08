@@ -1,0 +1,52 @@
+@use "../../scss/" as *;
+
+.section {
+    padding-top: 56.1%;
+    height: 100%;
+    width: 100%;
+    background-position: top;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative;
+
+    &__title {
+        position: absolute;
+        width: 100%;
+        top: 10%;
+        &__h3 {
+            font-size: 50px;
+            font-weight: bold;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.2;
+            letter-spacing: 5px;
+            text-align: center;
+            text-transform: uppercase;
+            @include tablet {
+                font-size: 30px;
+            }
+            @include mobile {
+                font-size: 20px;
+            }
+        }
+        &__p {
+            margin: auto;
+            margin-top: 2%;
+            width: 50%;;
+            font-size: 20px;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.6;
+            letter-spacing: normal;
+            text-align: center;
+            @include desktop {
+                width: 70%;
+            }
+            @include tablet {
+                font-size: 16px;
+                display: none;
+            }
+        }
+    }
+}

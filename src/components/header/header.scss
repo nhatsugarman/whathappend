@@ -1,92 +1,137 @@
 @use '../../scss/' as *;
 
-.logo {
-    font-size: 2.5rem;
-    font-weight: 600;
-
-    @include flex(center, unset);
-
-    img {
-        margin-right: 10px;
-        width: 50px;
-
-        @include mobile {
-            width: 30px;
-            margin-right: 0;
-        }
-    }
-}
-
 .header {
     height: $header-height;
+    width: 100%;
+    background-color: $black-two;
+    color: $white;
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    z-index: 99;
-    transition: height 0.3s ease, background-color 0.3s ease;
+    right: 0;
+    z-index: 2;
 
-    &.shrink {
-        height: $header-shrink-height;
-        background-color: $body-bg;
-    }
-
-    &__wrap {
-        @include flex(center, space-between);
+    .header-container {
+        width: 100%;
         height: 100%;
-        padding: 0 2rem;
+        padding: 0px 120px 0 97px;
+        @include flex(center, space-between);
+        .header__logo {
+            img {
+                width: 226px;
+                height: 26px;
+                object-fit: contain;
+            }
+        }
 
+        @include desktop {
+            padding-right: 50px;
+            padding-left: 50px;
+        }
+        
+        @include tablet {
+            padding-right: 20px;
+            padding-left: 20px;
+        }
         @include mobile {
-            justify-content: center;
+            padding-left: 10px;
+            padding-right: 10px;
         }
-    }
-
-    &__nav {
-        @include flex(center, unset);
-
-        & > * ~ * {
-            margin-left: 2rem;
-        }
-
-        li {
-            padding: 5px 0;
-            font-weight: 700;
-            position: relative;
-            font-size: 1.5rem;
-
-            &::after {
+        .header__menu {
+            display: flex;
+            justify-content: space-between;
+            width: 55.5%;
+            gap: 102px;
+            text-transform: uppercase;
+            font-size: 14px;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 2.14;
+            letter-spacing: normal;
+            text-align: center;
+            @include desktop {
+                flex: 0.9;
+            }
+            @include mobile {
+                flex: unset;
+                justify-content: flex-end;
+            }
+           
+            .header__menu-lists {
+                flex: 1.5;
+                @include flex(center, space-between);
+                position: relative;
+                @include mobile {            
+                    @include flex(unset, flex-start);
+                    flex-direction: column;
+                    transform: translateX(-100%);
+                    transition: transform 0.5s ease;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100vh;
+                    background-color: $black-two;
+                    z-index: 100;
+                    font-weight: bold;
+                    font-size: 20px;
+                    margin-top: 20px;
+                    &.active {          
+                        transform: translateX(0);    
+                    }
+                }
+            }
+            .header__menu-lists::after {
                 content: "";
+                display: block;
                 position: absolute;
-                bottom: 0;
-                left: 50%;
-                transform: translateX(-50%);
-                width: 0;
-                transition: width 0.5s ease;
-                height: 2px;
-                background-color: $main-color;
+                width: 1px;
+                height: 23px;
+                background-color: $pinkish-grey-two;
+                right: -57px;   
+                @include mobile {
+                    display: none;
+                }     
+            }
+            
+            .header__menu-left {
+                flex: 1;
+                @include flex(center, space-between);
+                gap: 79px;
+                @include tablet {
+                    position: fixed;
+                    z-index: 99;
+                    height: $header-height;
+                    top: 100px;
+                    color: $mid-blue;
+                    right: -20px;
+                    flex-direction: column;
+                    gap: 20px;
+                    font-weight: bold;
+                    .header__menu-left-login {
+                        height: 100%;
+                        width: 60%;
+                        background-color: $bright-orange;
+                        padding: 10px;
+                        border-radius: 10px;
+                        box-shadow: 0 0 2px 2px $mid-blue;
+                    }
+                }
+                @include tablet {                    
+                    right: -30px;
+                }
             }
 
-            &.active::after,
-            &:hover::after {
-                width: 100%;
+            &__mobile-toggle {
+                display: none;
+                @include mobile {
+                    display: block;
+                    font-size: 40px;
+                }
             }
-        }
-
-        @include mobile {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            height: 5rem;
-            width: 100%;
-            background-color: $body-bg;
-            padding: 0 2rem;
-            box-shadow: $box-shadow;
-
-            @include flex(center, space-between);
-
-            & > * ~ * {
-                margin-left: 0;
-            }
-        }
-    }
+        } 
+    } 
+    
+    
 }
